@@ -1,0 +1,38 @@
+{
+  "name": "leju-cli",
+  "description": "leju cli",
+  "version": "1.1.2",
+  "keywords": [
+    "toolkit",
+    "cli",
+    "leju"
+  ],
+  "files": [
+    "lib",
+    "bin",
+    "cli",
+    "plugins"
+  ],
+  "bin": {
+    "leju": "./bin/leju.js"
+  },
+  "dependencies": {
+    "commander": ">=2.0.0",
+    "babel-core": "latest",
+    "uglify-js": "latest"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0"
+  },
+  "scripts": {},
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 5.0"
+  },
+  "readmeFilename": "README.md",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
