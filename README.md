@@ -26,6 +26,8 @@ leju folder
 
 ```bash
 leju update
+```
+
 ```bash
 leju babel
 ```
