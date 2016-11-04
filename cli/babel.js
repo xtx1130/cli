@@ -1,15 +1,22 @@
+'use strict';
 const babel = require('babel-core');
 class Babels {
 	constructor() {
 		this.option = {
-			'-m':'minified'
+			'-m,--mini':'minified'
 		}
-		this.description = ''
+		this.description = '6to5'
 	}
 	action() {
-		return () => {
+		return (ac,option) => {
+			let opt = {minified:false},
+				ext = '.es5.js';
+			if(option.mini){
+				opt.minified=true
+				ext = '.es5min.js'
+			}
 			var args = process.argv.splice(2);
-			babel.transformFile(args[1],function(err, result) {
+			babel.transformFile(args[1],opt,function(err, result) {
 				let code = result.code;
 				let pss = args[1].split('/');
 				let [pa, min] = ['', ''];
@@ -21,12 +28,17 @@ class Babels {
 					pss = ''
 				}
 				min.pop();
-				min = min.join('.') + '.es5.js';
+				min = min.join('.') + ext;
 				pa = process.cwd() + '/' + pss;
-				fs.writeFile(pa + '/' + min, code, function(err) {
-					if (err)
-						throw err;
-				})
+				var writerStream = fs.createWriteStream(pa + '/' + min);
+				writerStream.write(code,'UTF8');
+				writerStream.end();
+				writerStream.on('finish', function() {
+				    console.log("babel finished");
+				});
+				writerStream.on('error', function(err){
+				   console.log(err.stack);
+				});
 			});
 		}
 	}

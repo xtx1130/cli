@@ -17,6 +17,10 @@ npm install -g leju-cli
 ### parameter
 
 ```bash
+leju -h --help 
+```
+
+```bash
 leju version
 ```
 
@@ -29,7 +33,7 @@ leju update
 ```
 
 ```bash
-leju babel
+leju babel (-m)
 ```
 
 ### 1.1.0 version

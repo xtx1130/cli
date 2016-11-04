@@ -6,7 +6,8 @@ const exec = require('child_process').exec;
 global.path = require('path');
 global.fs = require('fs')
 program
-	.version('1.1.2');
+	.version('1.1.3')
+	.option('-h --help','help doc')
 program.command('update').action(function() {
 	exec('npm update leju-cli', function(err, stdout, stderr) {
 		if (!err && stdout) {
