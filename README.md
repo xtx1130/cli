@@ -44,10 +44,14 @@ leju babel (-m)
 
 + add babels for es6 to es5
 
+### 1.1.4 version
+
++ add cdn for switch host(nginx,zsh,mac osX10+ needed)
+
 
 ### TO DO
 
-A lot of things need LEJU-FE to do. It is just a beginning.
++ add uglify next
 
 
 ## License

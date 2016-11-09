@@ -1,10 +1,9 @@
 #!/bin/zsh
 file="/etc/hosts";
 source ~/.zshrc;
-type=0;
+type=$1;
 env[1]="开发" env[2]="测试"  env[3]="线上";
 echo "现在是${env[$HOSTS]}环境";
-read -p "选择切换到：1.开发  2.测试  3.线上 : " type;
 if [[ $HOSTS -eq $type ]];
 then
        echo "环境不变"
@@ -26,6 +25,7 @@ case $type in
 3)
         echo "正切换到线上"
                 sed -i "" '/testcdn/,/end/s/^/#/' $file;
+                nginx -s stop;
         ;;
 *)
         echo "输入错误"
