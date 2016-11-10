@@ -4,7 +4,7 @@
 const program = require('commander');
 const exec = require('child_process').exec;
 global.path = require('path');
-global.fs = require('fs')
+global.fs = require('fs');
 program
 	.version('1.1.3')
 	.option('-h --help','help doc')
