@@ -16,13 +16,14 @@
   "bin": {
     "leju": "./bin/leju.js"
   },
-  "repository": { 
-    "type" : "git",
-    "url" : "http://github.com/xtx1130/cli.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/xtx1130/cli.git"
   },
-  "dependencies":{
-    "commander": ">=2.0.0",
+  "dependencies": {
     "babel-core": "latest",
+    "browserify": "^13.1.1",
+    "commander": ">=2.0.0",
     "uglify-js": "latest"
   },
   "devDependencies": {

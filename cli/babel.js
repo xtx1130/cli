@@ -1,5 +1,6 @@
 'use strict';
 const babel = require('babel-core');
+const path = require('../deps/tpath');
 class Babels {
 	constructor() {
 		this.option = {
@@ -18,19 +19,9 @@ class Babels {
 			var args = process.argv.splice(2);
 			babel.transformFile(args[1],opt,function(err, result) {
 				let code = result.code;
-				let pss = args[1].split('/');
-				let [pa, min] = ['', ''];
-				if (pss.length > 1) {
-					min = pss.pop().split('.');
-					pss = pss.join('/');
-				} else {
-					min = pss.split('.');
-					pss = ''
-				}
-				min.pop();
-				min = min.join('.') + ext;
-				pa = process.cwd() + '/' + pss;
-				var writerStream = fs.createWriteStream(pa + '/' + min);
+				let pa = new path(args[1]);
+				pa.name = pa.name.join('.') + ext;
+				var writerStream = fs.createWriteStream(pa.path + '/' + pa.name);
 				writerStream.write(code,'UTF8');
 				writerStream.end();
 				writerStream.on('finish', function() {
