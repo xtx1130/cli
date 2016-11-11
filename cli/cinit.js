@@ -1,6 +1,7 @@
 'use strict';
 const br = require('browserify');
 const path = require('../deps/tpath');
+const wrs = require('../deps/wrstream');
 class Brow{
 	constructor(){
 		this.option={
@@ -23,15 +24,7 @@ class Brow{
 				else {
 					let pa = new path(file);
 					pa.name = pa.name.join('.') + '.common.js';
-					var writerStream = fs.createWriteStream(pa.path + '/' + pa.name);
-					writerStream.write(buf, 'UTF8');
-					writerStream.end();
-					writerStream.on('finish', function() {
-						console.log("browserify finished");
-					});
-					writerStream.on('error', function(err) {
-						console.log(err.stack);
-					});
+					wrs(pa.path + '/' + pa.name,buf,'browserify finished')
 				}
 
 			});

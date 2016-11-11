@@ -1,6 +1,7 @@
 'use strict';
 const babel = require('babel-core');
 const path = require('../deps/tpath');
+const wrs = require('../deps/wrstream');
 class Babels {
 	constructor() {
 		this.option = {
@@ -21,15 +22,7 @@ class Babels {
 				let code = result.code;
 				let pa = new path(args[1]);
 				pa.name = pa.name.join('.') + ext;
-				var writerStream = fs.createWriteStream(pa.path + '/' + pa.name);
-				writerStream.write(code,'UTF8');
-				writerStream.end();
-				writerStream.on('finish', function() {
-				    console.log("babel finished");
-				});
-				writerStream.on('error', function(err){
-				   console.log(err.stack);
-				});
+				wrs(pa.path + '/' + pa.name,code,'babel finished')
 			});
 		}
 	}
