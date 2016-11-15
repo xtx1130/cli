@@ -36,6 +36,14 @@ leju update
 leju babel (-m)
 ```
 
+```bash
+leju cdn (-l --local,-o --online,-t --test)
+```
+
+```bash
+leju cinit (browserify)
+```
+
 ### 1.1.0 version
 
 + add programmer method and you can find demo.js for your fast establish a leju command
