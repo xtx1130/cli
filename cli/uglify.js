@@ -1,6 +1,7 @@
 'use strict';
-let ug = require('uglify-js2');
-let path =require('path');
+const ug = require('uglify-js2');
+const path = require('../deps/tpath');
+const wrs = require('../deps/wrstream');
 class Uglify{
 	constructor(){
 		this.option={
@@ -10,7 +11,7 @@ class Uglify{
 	}
 	action(){
 		return (ac)=>{
-			let opt = {mangle:false},
+			let opt = {mangle:false,beautify:false},
 				file=[],
 				result='',
 				args = process.argv.splice(2);
@@ -19,11 +20,11 @@ class Uglify{
 					file.push(args[i])
 			}
 			if(ac.beautify)
-				opt.beautify=true
-			result = ug.minify(file,opt)
-			//to do
-			console.log(result)
-			
+				opt.beautify=true;
+			result = ug.minify(file,opt).code;
+			let pa = new path(file[0]);
+			pa.name = pa.name.join('.') + '.min.js';
+			wrs(pa.path + '/' + pa.name,result,'uglify finished')
 		}
 	}
 }
