@@ -48,10 +48,13 @@ leju babel (-m)
 
 + add cdn for switch host(nginx,zsh,mac osX10+ needed)
 
+### 1.1.5 version
+
++ add uglify for compass javascript
 
 ### TO DO
 
-+ add uglify next
++ fix sh bug
 
 
 ## License
