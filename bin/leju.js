@@ -19,8 +19,13 @@ program.command('update').action(function() {
 })
 
 function scanner() {
-	var readlist = fs.readdirSync(__dirname + '/../cli');
-	return readlist;
+	var readlist = fs.readdirSync(__dirname + '/../cli'),
+		_str = [];
+	readlist.forEach(function(s){
+		if(s.match('.js'))
+			_str.push(s)
+	})
+	return _str;
 }
 var comm = scanner()
 for (var i = 0; i < comm.length; i++) {
