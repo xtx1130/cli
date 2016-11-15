@@ -62,7 +62,7 @@ leju cinit (browserify)
 
 ### TO DO
 
-+ fix sh bug
++ add server 
 
 
 ## License
