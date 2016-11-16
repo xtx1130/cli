@@ -60,9 +60,14 @@ leju cinit (browserify)
 
 + add uglify for compass javascript
 
+### 1.1.6 version
+
++ add static server (you need combine nginx to use it)
++ add sh folder for shell 
+
 ### TO DO
 
-+ add server 
++ fix bug 
 
 
 ## License
