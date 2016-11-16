@@ -37,3 +37,4 @@ esac
 sed -i "" "s/HOSTS=$HOSTS/HOSTS=$type/" ~/.zshrc;
 cat $file;
 killall -HUP mDNSResponder;
+exit 0;

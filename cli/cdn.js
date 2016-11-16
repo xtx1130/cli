@@ -1,5 +1,6 @@
 'use strict';
 const spawn = require('child_process').spawn;
+const shpath = require('../deps/shpath');
 class Switch {
 	constructor() {
 		this.option = {
@@ -19,7 +20,7 @@ class Switch {
 				status=2
 			if(ac.online)
 				status=3
-			ls = spawn('sh', ['switch.sh',status] )
+			ls = spawn('sh', [shpath+'/switch.sh',status] )
 			ls.stdout.on('data', function(data) {
 				console.log('standard output:\n' + data);
 			});
