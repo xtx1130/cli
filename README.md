@@ -67,7 +67,7 @@ leju cinit (browserify)
 
 ### TO DO
 
-+ fix bug 
++ add svn up for leju
 
 
 ## License
