@@ -23,7 +23,8 @@ then
 	folder=${filepath%/*};
 	cd $online$filepath;
 	svn up;
-	sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -);
+	#TO DO：加上了-v结果无法把结果流输出给node
+	echo `sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -)`;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$filepath;
 	svn status;
