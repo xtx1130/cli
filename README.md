@@ -65,9 +65,13 @@ leju cinit (browserify)
 + add static server (you need combine nginx to use it)
 + add sh folder for shell 
 
+### 1.1.6 version
+
++ add auto push online 
+
 ### TO DO
 
-+ add svn up for leju
++ change folders ,it's too old
 
 
 ## License
