@@ -44,6 +44,10 @@ leju cdn (-l --local,-o --online,-t --test)
 leju cinit (browserify)
 ```
 
+```bash
+leju ci (svn up and ci)
+```
+
 ### 1.1.0 version
 
 + add programmer method and you can find demo.js for your fast establish a leju command
