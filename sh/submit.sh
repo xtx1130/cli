@@ -11,7 +11,7 @@ then
 	cd $online$var1;
 	svn up;
 	sudo cp $offline$filepath $online$filepath;
-	echo '['$online$filepath'] update';
+	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$var1;
 	svn status;
 	svn ci -m \'${message}\'
@@ -24,7 +24,7 @@ then
 	cd $online$filepath;
 	svn up;
 	sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -);
-	echo '['$online$filepath'] update';
+	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$filepath;
 	svn status;
 	svn ci -m \'${message}\'
