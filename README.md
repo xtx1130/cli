@@ -69,7 +69,7 @@ leju ci (svn up and ci)
 + add static server (you need combine nginx to use it)
 + add sh folder for shell 
 
-### 1.1.6 version
+### 1.1.7 version
 
 + add auto push online 
 
