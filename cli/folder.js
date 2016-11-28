@@ -2,6 +2,8 @@
  *@description 生成乐居FE开发环境相关目录结构
  *@author tianxin@leju.com
 */
+const fileFolder = require('../config.js');
+const filedeps = require('../deps/filedeps');
 function folder() {
 	var readline = require('readline');
 	var rl = readline.createInterface({
@@ -37,20 +39,16 @@ function folder() {
 					notTheSame(folderName)
 				})
 			} else {
-				rl.question('Do you need controller folder? Y/N \n', function sb(answer) {
-					var fn = sb;
+				rl.question('Do you need README file? Y/N \n', function sb(answer) {
+					var fn = sb,
+						absolutePath = process.cwd(),
+						files = fileFolder.foleder;
 					if (answer == 'y' || answer == 'Y' || answer == 'yes') {
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'controller')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/style')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/js')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/html')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/images')
+						filedeps(files,folderName);
+						filedeps(fileFolder.files,folderName)
 						rl.close();
 					} else if (answer == 'n' || answer == 'N' || answer == '') {
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/style')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/js')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/html')
-						mkdirs(process.cwd() + '/' + folderName + '/' + 'statics/images')
+						filedeps(files,folderName)
 						rl.close();
 					} else {
 						rl.question('Fuck!!please use Y/N \n', fn)
