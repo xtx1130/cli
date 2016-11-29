@@ -1,6 +1,7 @@
 'use strict';
-const spawn = require('child_process').spawn;
+const exec = require('child_process').exec;
 const shpath = require('../deps/shpath');
+const chalk = require('chalk');
 class Switch {
 	constructor() {
 		this.option = {
@@ -20,9 +21,9 @@ class Switch {
 				status=2
 			if(ac.online)
 				status=3
-			ls = spawn('sh', [shpath+'/switch.sh',status] )
+			ls = exec('sudo sh '+ shpath+'/switch.sh '+status)
 			ls.stdout.on('data', function(data) {
-				console.log('standard output:\n' + data);
+				console.log(chalk.cyan('standard output:\n') + data);
 			});
 			ls.on('exit', function(code) {
 				//console.log(code)

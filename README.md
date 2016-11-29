@@ -73,9 +73,15 @@ leju ci (svn up and ci)
 
 + add auto push online 
 
+### 1.1.9 version
+
++ fix switch.sh & submit.sh bug
++ add filedeps for deps
++ update folder for using config.js to control folder style
+
 ### TO DO
 
-+ change folders ,it's too old
++ fix bug
 
 
 ## License

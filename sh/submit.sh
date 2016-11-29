@@ -4,10 +4,10 @@ message=$2;
 online='/Users/xtx/Desktop/workspace/online/203/cdn.ljimg.com/trunk/';
 offline='/Users/xtx/Desktop/workspace/trunk/';
 # 文件处理
-if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]];
+if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]] || [[ $filepath =~ ".png" ]];
 then
 	var1=${filepath%%/*};
-	echo '['$var1'] update';
+	echo '\033[33m['$var1'] update \033[0m';
 	cd $online$var1;
 	svn up;
 	sudo cp $offline$filepath $online$filepath;
@@ -21,8 +21,6 @@ elif [ $message ];
 then 
 	tarpath=${filepath##*/};
 	folder=${filepath%/*};
-	echo $tarpath;
-	echo $folder;
 	echo $online$filepath;
 	cd $online$filepath;
 	svn up;
