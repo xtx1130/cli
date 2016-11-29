@@ -1,3 +1,7 @@
+/**
+ *@params files [string]  文件夹json串
+ *@params folderName [string] 项目名称
+*/
 'use strict';
 var mkdirs = function(dirpath, mode, callback) {
 	mode = mode || '0777';
