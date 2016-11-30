@@ -24,7 +24,9 @@
     "babel-core": "latest",
     "browserify": "^13.1.1",
     "chalk": "^1.1.3",
+    "co": "^4.6.0",
     "commander": ">=2.0.0",
+    "crypto": "0.0.3",
     "uglify-js": "latest"
   },
   "devDependencies": {

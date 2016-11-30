@@ -2,15 +2,19 @@
 const ug = require('uglify-js2');
 const path = require('../deps/tpath');
 const wrs = require('../deps/wrstream');
+const crypto = require('crypto');
+const fs = require('fs');
+const co = require('co');
 class Uglify{
 	constructor(){
 		this.option={
-			'-b,--beautify':'beautiful program'
+			'-b,--beautify':'beautiful program',
+			'-m,--md5':'md5 file pass added'
 		},
 		this.description="UglifyJs2"
 	}
 	action(){
-		return (ac)=>{
+		return (ac,opts)=>{
 			let opt = {mangle:false,beautify:false},
 				file=[],
 				result='',
@@ -19,12 +23,41 @@ class Uglify{
 				if(args[i].match('.js'))
 					file.push(args[i])
 			}
-			if(ac.beautify)
+			if(opts.beautify)
 				opt.beautify=true;
-			result = ug.minify(file,opt).code;
-			let pa = new path(file[0]);
-			pa.name = pa.name.join('.') + '.min.js';
-			wrs(pa.path + '/' + pa.name,result,'uglify finished')
+			if(opts.md5){
+				var str = '';
+				co(function* (){
+					let _str='';
+					let num1 = yield new Promise((res,rej)=>{
+						let md5sum = crypto.createHash('md5'),
+							stream = fs.createReadStream(file[0]);
+						stream.on('data', function(chunk) {
+					        md5sum.update(chunk);
+					    });
+					    stream.on('end', function() {
+					        _str = md5sum.digest('hex').toUpperCase();
+					        res();
+						});
+					})
+					return _str
+				}).then(function(val){
+					let _tem = val.split(''),
+						low = _tem.slice(-3,-1),
+						high = _tem.slice(0,4),
+						md5 = high.concat(low).join('');
+					result = ug.minify(file,opt).code;
+					let pa = new path(file[0]);
+					pa.name = pa.name.join('.') + '_@' + md5 + '.min.js';
+					wrs(pa.path + '/' + pa.name,result,'uglify finished')
+				})
+			}else{
+				result = ug.minify(file,opt).code;
+				let pa = new path(file[0]);
+				pa.name = pa.name.join('.') + '.min.js';
+				wrs(pa.path + '/' + pa.name,result,'uglify finished')
+			}
+			
 		}
 	}
 }
