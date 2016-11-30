@@ -36,5 +36,5 @@ case $type in
 esac
 sed -i "" "s/HOSTS=$HOSTS/HOSTS=$type/" ~/.zshrc;
 cat $file;
-killall -HUP mDNSResponder;
+sudo dscacheutil -flushcache;
 exit 0;
