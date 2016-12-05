@@ -3,6 +3,8 @@ filepath=$1;
 message=$2;
 online='/Users/xtx/Desktop/workspace/online/203/cdn.ljimg.com/trunk/';
 offline='/Users/xtx/Desktop/workspace/trunk/';
+readonly online;
+readonly offline;
 # 文件处理
 if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]] || [[ $filepath =~ ".png" ]];
 then
@@ -28,7 +30,7 @@ then
 	echo `sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -)`;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$filepath;
-	svn ci -m \'${message}\';
+	svn ci -m \'${message}\'; # > /dev/null
 	svn log -v -l2;
 	exit 0;
 # 没有提示消息
