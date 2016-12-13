@@ -35,6 +35,6 @@ case $type in
     ;;
 esac
 sed -i "" "s/HOSTS=$HOSTS/HOSTS=$type/" ~/.zshrc;
-cat $file|grep -A15 'testcdn';
+cat $file|grep -A15 'testcdn'|pr -o4|grep -v '^$';
 sudo dscacheutil -flushcache;
 exit 0;
