@@ -15,7 +15,7 @@ then
 	sudo cp $offline$filepath $online$filepath;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$var1;
-	#svn ci -m \'${message}\';
+	svn ci -m \'${message}\';
 	svn log $online$filepath -v -l2;
 	exit 0;
 # 文件夹处理
@@ -30,7 +30,7 @@ then
 	echo `sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -)`;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$filepath;
-	#svn ci -m \'${message}\'; # > /dev/null
+	svn ci -m \'${message}\'; # > /dev/null
 	svn log $online$filepath -v -l2;
 	exit 0;
 # 没有提示消息,其实没什么卵用，默认undefined了
