@@ -39,6 +39,9 @@ class Uglify{
 					        _str = md5sum.digest('hex').toUpperCase();
 					        res();
 						});
+						stream.on('error', function() {//promise 防止内存泄露
+					        rej();
+					    });
 					})
 					return _str
 				}).then(function(val){
