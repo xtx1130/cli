@@ -3,12 +3,14 @@
 > cli for leju
 
 
-## What a fuck,I wanna to establish a folder quickly and use plugins as my wish
+## I wanna to establish a folder quickly and use plugins as my wish
 
 ### What is leju?
 
 Establish folders quickly
-Use babels quickly
+Use plugins quickly
+submit your code quickly
+change hosts quickly
 
 ```bash
 npm install -g leju-cli
