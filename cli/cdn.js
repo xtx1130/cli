@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 const shpath = require('../deps/shpath');
 const chalk = require('chalk');
 const addon_out = require('../addon/build/Release/systemout').systemout();
-let [a,b]=['',''];
+/*let [a,b]=['',''];
 let c=new String('standard output:')
 console.time('c++')
 for(var i=0;i<1000;i++){
@@ -14,7 +14,7 @@ console.time('js')
 for(var i=0;i<1000;i++){
 	b+=c;
 }
-console.timeEnd('js')
+console.timeEnd('js')*/
 class Switch {
 	constructor() {
 		this.option = {

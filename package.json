@@ -11,7 +11,10 @@
     "lib",
     "bin",
     "cli",
-    "plugins"
+    "plugins",
+    "deps",
+    "sh",
+    "addon"
   ],
   "bin": {
     "leju": "./bin/leju.js"
