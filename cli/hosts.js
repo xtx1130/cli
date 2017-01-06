@@ -22,8 +22,6 @@ class Switch {
 				status=0
 			if(s.del)
 				status=1
-			console.log(status)
-			return 0
 			ls = exec('sudo sh '+ shpath+'/projectenv.sh '+httpname+' '+status)
 			ls.stdout.on('data', function(data) {
 				console.log(chalk.cyan(addon_out) + data);
