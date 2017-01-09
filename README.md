@@ -50,6 +50,10 @@ leju cinit (browserify)
 leju ci (svn up and ci)
 ```
 
+```bash
+leju hosts domain (-a --add add # for domain,-d --delete delete # for domain)
+```
+
 ### 1.1.0 version
 
 + add programmer method and you can find demo.js for your fast establish a leju command
@@ -81,10 +85,16 @@ leju ci (svn up and ci)
 + add filedeps for deps
 + update folder for using config.js to control folder style
 
+### 1.2.0 version
+
++ add projectenv.sh for hosts
++ add hosts for single host addon(#)
+
 ### TO DO
 
 + fix bug
 
+##tips
 
 ## License
 
