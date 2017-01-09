@@ -96,9 +96,8 @@ leju hosts domain (-a --add add # for domain,-d --delete delete # for domain)
 
 ##tips
 
-+If you wanna use it or test it,please ensure your computer is mac osX 10.11+,  
-and you should use zsh shell,gcc and make file is also needed,and do not forget  
-nginx,O(∩_∩)O~
++ If you wanna use it or test it,please ensure your computer is mac osX 10.11+,and you should use zsh shell,  
+gcc and make file is also needed,and do not forget nginx,O(∩_∩)O~
 
 ## License
 
