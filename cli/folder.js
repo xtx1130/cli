@@ -2,7 +2,7 @@
  *@description 生成乐居FE开发环境相关目录结构
  *@author tianxin@leju.com
 */
-const fileFolder = require('../config.js');
+const fileFolder = require('../config/config.js');
 const filedeps = require('../deps/filedeps');
 function folder() {
 	var readline = require('readline');

@@ -3,8 +3,10 @@
 'use strict';
 const program = require('commander');
 const exec = require('child_process').exec;
+const Promise = require('bluebird');
 global.path = require('path');
 global.fs = require('fs');
+Promise.promisifyAll(global.fs);
 program
 	.version('1.1.3')
 	.option('-h --help','help doc')

@@ -44,7 +44,7 @@ class Uglify{
 					    });
 					})
 					return _str
-				}).then(function(val){
+				}).then((val)=>{
 					let _tem = val.split(''),
 						low = _tem.slice(-3,-1),
 						high = _tem.slice(0,4),
