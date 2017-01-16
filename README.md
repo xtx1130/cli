@@ -3,7 +3,7 @@
 > cli for leju
 
 
-## I wanna to establish a folder quickly and use plugins as my wish
+## Deeply individuation env for leju developers
 
 ### What is leju?
 
@@ -11,6 +11,10 @@ Establish folders quickly
 Use plugins quickly
 submit your code quickly
 change hosts quickly
+
+### Env needed:
+
+_node(>=5.0.0),zsh bash,nginx_
 
 ```bash
 npm install -g leju-cli
@@ -20,6 +24,10 @@ npm install -g leju-cli
 
 ```bash
 leju -h --help 
+```
+
+```bash
+leju init(init project)
 ```
 
 ```bash
@@ -43,7 +51,7 @@ leju cdn (-l --local,-o --online,-t --test)
 ```
 
 ```bash
-leju cinit (browserify)
+leju common (browserify)
 ```
 
 ```bash
@@ -51,7 +59,7 @@ leju ci (svn up and ci)
 ```
 
 ```bash
-leju hosts domain (-a --add add # for domain,-d --delete delete # for domain)
+leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 ```
 
 ### 1.1.0 version
@@ -89,6 +97,11 @@ leju hosts domain (-a --add add # for domain,-d --delete delete # for domain)
 
 + add projectenv.sh for hosts
 + add hosts for single host addon(#)
+
+### 1.2.3 version
+
++ add auto init
++ fix bugs
 
 ### TO DO
 
