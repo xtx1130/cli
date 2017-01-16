@@ -2,6 +2,7 @@
 const spawn = require('child_process').spawn;
 const shpath = require('../deps/shpath');
 const chalk = require('chalk');
+const readFile = require('../deps/readFile');
 class Switch {
 	constructor() {
 		this.option = {
@@ -12,8 +13,10 @@ class Switch {
 	action() {
 		return (ac) => {
 			let arg = process.argv.splice(2),
+				path = readFile('info.json'),
 				ls;
-			ls = spawn('sh', [shpath+'/submit.sh',arg[1],arg[2]] )
+			arg[2]=arg[2]?arg[2]:'update';
+			ls = spawn('sh', [shpath+'/submit.sh',arg[1],arg[2],path.offlinePath,path.onlinePath] )
 			ls.stdout.on('data', function(data) {
 				console.log(chalk.cyan('standard output:') + data);
 			});

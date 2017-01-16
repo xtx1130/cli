@@ -1,8 +1,8 @@
 #!/bin/zsh
 filepath=$1;
 message=$2;
-online='/Users/xtx/Desktop/workspace/online/203/cdn.ljimg.com/trunk/';
-offline='/Users/xtx/Desktop/workspace/trunk/';
+offline=$3;
+online=$4;
 readonly online;
 readonly offline;
 # 文件处理
@@ -15,7 +15,7 @@ then
 	sudo cp $offline$filepath $online$filepath;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$var1;
-	svn ci -m \'${message}\';
+	#svn ci -m \'${message}\';
 	svn log $online$filepath -v -l2;
 	exit 0;
 # 文件夹处理
