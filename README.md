@@ -7,10 +7,10 @@
 
 ### What is leju?
 
-Establish folders quickly
-Use plugins quickly
-submit your code quickly
-change hosts quickly
+Establish folders quickly  
+Use plugins quickly  
+submit your code quickly  
+change hosts quickly  
 
 ### Env needed:
 
