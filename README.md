@@ -103,13 +103,18 @@ leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 + add auto init
 + fix bugs
 
+### 1.2.5 version
+
++ init is needed when first use
++ make stdout more distinct
+
 ### TO DO
 
-+ fix bug
++ make chalk as a class
 
-##tips
+## tips
 
-+ If you wanna use it or test it,please ensure your computer is mac osX 10.11+,and you should use zsh shell,  
++ If you wanna use it or test it,please ensure your computer is mac osX 10.11+,python(<=2.7) and you should use zsh shell,  
 gcc and make file is also needed,and do not forget nginx,O(∩_∩)O~
 
 ## License
