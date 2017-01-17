@@ -15,7 +15,7 @@ then
 	sudo cp $offline$filepath $online$filepath;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$var1;
-	#svn ci -m \'${message}\';
+	svn ci -m \'${message}\';
 	svn log $online$filepath -v -l2;
 	exit 0;
 # 文件夹处理
