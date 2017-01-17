@@ -4,6 +4,7 @@
 const program = require('commander');
 const exec = require('child_process').exec;
 const Promise = require('bluebird');
+const chalk = require('chalk');
 let leju = require('../deps/lejuCore');
 global.path = require('path');
 global.fs = require('fs');
@@ -21,20 +22,20 @@ program
 program.command('update').action(() => {
 	exec('npm update leju-cli', (err, stdout, stderr)=> {
 		if (!err && stdout) {
-			console.log('update ok')
+			console.log(chalk.gray('[console info] ')+'update ok')
 		} else {
-			console.log('尼玛，用的最新的升级毛线！')
+			console.log(chalk.gray('[console info] ')+'尼玛，用的最新的升级毛线！')
 		}
 	})
 })
-// if(!process.argv.splice(2).length){
-// 	var _ex = fs.existsSync(process.cwd()+'/lejuconfig.js');
-// 	if(_ex){
-// 		console.log(1)
-// 	}else{
-// 		process.stdout.write('please use leju help for more information');
-// 	}
-// }
+if(!process.argv.slice(2).length){
+	var _ex = fs.existsSync(process.cwd()+'/lejuconfig.js');
+	if(_ex){
+		console.log(1)
+	}else{
+		process.stdout.write(chalk.gray('[console info] ')+'please use leju help for more information');
+	}
+}
 function scanner() {
 	var readlist = fs.readdirSync(__dirname + '/../cli'),
 		_str = [];
