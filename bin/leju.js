@@ -4,14 +4,20 @@
 const program = require('commander');
 const exec = require('child_process').exec;
 const Promise = require('bluebird');
+let leju = require('../deps/lejuCore');
 global.path = require('path');
 global.fs = require('fs');
 Promise.promisifyAll(global.fs);
+Object.defineProperty(global, 'leju', {
+    enumerable: true,
+    writable: false,
+    value: leju
+});
 program
 	.version('1.1.3')
 	.option('-h --help','help doc')
-program.command('update').action(function() {
-	exec('npm update leju-cli', function(err, stdout, stderr) {
+program.command('update').action(() => {
+	exec('npm update leju-cli', (err, stdout, stderr)=> {
 		if (!err && stdout) {
 			console.log('update ok')
 		} else {
@@ -19,6 +25,15 @@ program.command('update').action(function() {
 		}
 	})
 })
+if(!process.argv.splice(2).length){
+	fs.exists(process.cwd()+'/lejuconfig.js',function(e){
+		if(e){
+			console.log(1)
+		}else{
+
+		}
+	})
+}
 
 function scanner() {
 	var readlist = fs.readdirSync(__dirname + '/../cli'),
