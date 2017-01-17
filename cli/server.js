@@ -11,6 +11,8 @@ class Server {
 	}
 	action() {
 		return () => {
+			if(!ifInit)
+				return false
 			let ls = spawn('sh', [shpath+'/serverStart.sh',serverPath] )
 			ls.stdout.on('data', function(data) {
 				console.log('standard output:\n' + data);

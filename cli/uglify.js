@@ -15,6 +15,8 @@ class Uglify{
 	}
 	action(){
 		return (ac,opts)=>{
+			if(!ifInit)
+				return false
 			let opt = {mangle:false,beautify:false},
 				file=[],
 				result='',

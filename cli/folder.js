@@ -5,6 +5,8 @@
 const fileFolder = require('../config/config.js');
 const filedeps = require('../deps/filedeps');
 function folder() {
+	if(!ifInit)
+		return false
 	var readline = require('readline');
 	var rl = readline.createInterface({
 		input: process.stdin,

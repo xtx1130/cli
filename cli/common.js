@@ -11,6 +11,8 @@ class Brow{
 	}
 	action(){
 		return (ac)=>{
+			if(!ifInit)
+				return false
 			let file='',
 				args = process.argv.splice(2);
 			for(var i=0;i<args.length;i++){

@@ -11,6 +11,8 @@ class Babels {
 	}
 	action() {
 		return (ac,option) => {
+			if(!ifInit)
+				return false
 			let opt = {minified:false},
 				ext = '.es5.js';
 			if(option.mini){

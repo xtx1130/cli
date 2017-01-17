@@ -14,6 +14,8 @@ class Switch {
 	action() {
 		//tips:如果argv除了option后有别的参数，需要加上第二个形参来判断
 		return (ac,s) => {
+			if(!ifInit)
+				return false
 			let status = 0,
 				arg = process.argv.splice(2),
 				httpname = arg[1].match(/\./)?arg[1]:arg[2],

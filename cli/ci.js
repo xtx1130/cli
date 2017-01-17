@@ -12,6 +12,8 @@ class Switch {
 	}
 	action() {
 		return (ac) => {
+			if(!ifInit)
+				return false
 			let arg = process.argv.splice(2),
 				path = readFile('info.json'),
 				ls;

@@ -14,6 +14,8 @@ class Switch {
 	}
 	action() {
 		return (ac) => {
+			if(!ifInit)
+				return false
 			var status = 0,
 				ls;
 			if(ac.local)

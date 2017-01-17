@@ -7,6 +7,7 @@ const Promise = require('bluebird');
 let leju = require('../deps/lejuCore');
 global.path = require('path');
 global.fs = require('fs');
+global.ifInit = require('../deps/ifInit');
 Promise.promisifyAll(global.fs);
 Object.defineProperty(global, 'leju', {
     enumerable: true,
@@ -14,8 +15,9 @@ Object.defineProperty(global, 'leju', {
     value: leju
 });
 program
-	.version('1.1.3')
-	.option('-h --help','help doc')
+	.version('1.2.5')
+	.option('-h --help','help doc');
+
 program.command('update').action(() => {
 	exec('npm update leju-cli', (err, stdout, stderr)=> {
 		if (!err && stdout) {
@@ -25,16 +27,14 @@ program.command('update').action(() => {
 		}
 	})
 })
-if(!process.argv.splice(2).length){
-	fs.exists(process.cwd()+'/lejuconfig.js',function(e){
-		if(e){
-			console.log(1)
-		}else{
-
-		}
-	})
-}
-
+// if(!process.argv.splice(2).length){
+// 	var _ex = fs.existsSync(process.cwd()+'/lejuconfig.js');
+// 	if(_ex){
+// 		console.log(1)
+// 	}else{
+// 		process.stdout.write('please use leju help for more information');
+// 	}
+// }
 function scanner() {
 	var readlist = fs.readdirSync(__dirname + '/../cli'),
 		_str = [];
