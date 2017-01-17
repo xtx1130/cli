@@ -24,7 +24,7 @@ class Babels {
 				let code = result.code;
 				let pa = new path(args[1]);
 				pa.name = pa.name.join('.') + ext;
-				wrs(pa.path + '/' + pa.name,code,'babel finished')
+				wrs(pa.path + '/' + pa.name,code,chalk.gray('[console info] ')+'babel finished')
 			});
 		}
 	}

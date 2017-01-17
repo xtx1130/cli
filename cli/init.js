@@ -19,7 +19,7 @@ class Init{
 				}),
 				json = {offlinePath:'',onlinePath:''};
 			function offline(func,func1){
-				rl.question(chalk.yellow("What is your offline absolute path?\n"),answer=>{
+				rl.question(chalk.gray('[console info] ')+chalk.yellow("What is your offline absolute path?\n"),answer=>{
 					let offlinepath = answer;
 					if(!offlinepath){
 						offline()
@@ -30,7 +30,7 @@ class Init{
 				})
 			}
 			function online(func){
-				rl.question(chalk.yellow("What is your online absolute path?\n"),answer=>{
+				rl.question(chalk.gray('[console info] ')+chalk.yellow("What is your online absolute path?\n"),answer=>{
 					let onlinepath = answer;
 					if(!onlinepath){
 						online()
@@ -43,7 +43,7 @@ class Init{
 				})
 			}
 			function bashsrc(){
-				rl.question(chalk.yellow("Please tell me where is your bashsrc or zshrc files...(absoulte path)\n"),answer=>{
+				rl.question(chalk.gray('[console info] ')+chalk.yellow("Please tell me where is your bashsrc or zshrc files...(absoulte path)\n"),answer=>{
 					if(!answer){
 						bashsrc()
 					}else{

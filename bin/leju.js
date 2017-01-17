@@ -24,7 +24,7 @@ program.command('update').action(() => {
 		if (!err && stdout) {
 			console.log(chalk.gray('[console info] ')+'update ok')
 		} else {
-			console.log(chalk.gray('[console info] ')+'尼玛，用的最新的升级毛线！')
+			console.log(chalk.red('[console warning] ')+'尼玛，用的最新的升级毛线！')
 		}
 	})
 })

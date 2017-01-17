@@ -15,7 +15,7 @@ class Server {
 				return false
 			let ls = spawn('sh', [shpath+'/serverStart.sh',serverPath] )
 			ls.stdout.on('data', function(data) {
-				console.log('standard output:\n' + data);
+				console.log(chalk.gray('[console info] ') + data);
 			});
 			ls.on('exit', function(code) {
 				
