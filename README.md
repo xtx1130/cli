@@ -108,6 +108,10 @@ leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 + init is needed when first use
 + make stdout more distinct
 
+### 1.2.7 version
+
++ add chalk info,warning,error
+
 ### TO DO
 
 + make chalk as a class

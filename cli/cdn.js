@@ -1,7 +1,7 @@
 'use strict';
 const exec = require('child_process').exec;
 const shpath = require('../deps/shpath');
-const chalk = require('chalk');
+const chalk = require('../deps/chalkInfo');
 //const addon_out = require('../addon/build/Release/systemout').systemout();
 class Switch {
 	constructor() {
@@ -26,7 +26,7 @@ class Switch {
 				status=3
 			ls = exec('sudo sh '+ shpath+'/switch.sh '+status)
 			ls.stdout.on('data', function(data) {
-				console.log(/*chalk.cyan(addon_out)*/chalk.gray('[console info] ') + data);
+				console.log(/*chalk.cyan(addon_out)*/chalk.info + data);
 			});
 			ls.on('exit', function(code) {
 				//console.log(code)

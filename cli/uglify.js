@@ -5,6 +5,7 @@ const wrs = require('../deps/wrstream');
 const crypto = require('crypto');
 const fs = require('fs');
 const co = require('co');
+const chalk = require('../deps/chalkInfo');
 class Uglify{
 	constructor(){
 		this.option={
@@ -54,13 +55,13 @@ class Uglify{
 					result = ug.minify(file,opt).code;
 					let pa = new path(file[0]);
 					pa.name = pa.name.join('.') + '_@' + md5 + '.min.js';
-					wrs(pa.path + '/' + pa.name,result,chalk.gray('[console info] ')+'uglify finished')
+					wrs(pa.path + '/' + pa.name,result,chalk.info+'uglify finished')
 				})
 			}else{
 				result = ug.minify(file,opt).code;
 				let pa = new path(file[0]);
 				pa.name = pa.name.join('.') + '.min.js';
-				wrs(pa.path + '/' + pa.name,result,chalk.gray('[console info] ')+'uglify finished')
+				wrs(pa.path + '/' + pa.name,result,chalk.info+'uglify finished')
 			}
 			
 		}

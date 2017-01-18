@@ -1,7 +1,7 @@
 'use strict';
 const readline = require('readline');
 const createfile = require('../deps/createFile');
-const chalk = require('chalk');
+const chalk = require('../deps/chalkInfo');
 const spawn = require('child_process').spawn;
 const shpath = require('../deps/shpath');
 class Init{
@@ -19,7 +19,7 @@ class Init{
 				}),
 				json = {offlinePath:'',onlinePath:''};
 			function offline(func,func1){
-				rl.question(chalk.gray('[console info] ')+chalk.yellow("What is your offline absolute path?\n"),answer=>{
+				rl.question(chalk.info+"What is your offline absolute path?\n",answer=>{
 					let offlinepath = answer;
 					if(!offlinepath){
 						offline()
@@ -30,7 +30,7 @@ class Init{
 				})
 			}
 			function online(func){
-				rl.question(chalk.gray('[console info] ')+chalk.yellow("What is your online absolute path?\n"),answer=>{
+				rl.question(chalk.info+"What is your online absolute path?\n",answer=>{
 					let onlinepath = answer;
 					if(!onlinepath){
 						online()
@@ -43,13 +43,13 @@ class Init{
 				})
 			}
 			function bashsrc(){
-				rl.question(chalk.gray('[console info] ')+chalk.yellow("Please tell me where is your bashsrc or zshrc files...(absoulte path)\n"),answer=>{
+				rl.question(chalk.info+"Please tell me where is your bashsrc or zshrc files...(absoulte path)\n",answer=>{
 					if(!answer){
 						bashsrc()
 					}else{
 						let ls = spawn('sh', [shpath+'/changeContent.sh',answer,'HOSTS=1'] )
 						ls.on('exit', (code) => {
-							process.stdout.write(chalk.cyan('\n'+'HOSTS config is ok!'))
+							process.stdout.write(chalk.info+'\n'+'HOSTS config is ok!')
 						})
 						rl.close()
 					}

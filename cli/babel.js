@@ -2,6 +2,7 @@
 const babel = require('babel-core');
 const path = require('../deps/tpath');
 const wrs = require('../deps/wrstream');
+const chalk = require('../deps/chalkInfo');
 class Babels {
 	constructor() {
 		this.option = {
@@ -24,7 +25,7 @@ class Babels {
 				let code = result.code;
 				let pa = new path(args[1]);
 				pa.name = pa.name.join('.') + ext;
-				wrs(pa.path + '/' + pa.name,code,chalk.gray('[console info] ')+'babel finished')
+				wrs(pa.path + '/' + pa.name,code,chalk.info+'babel finished')
 			});
 		}
 	}

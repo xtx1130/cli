@@ -4,7 +4,7 @@
 const program = require('commander');
 const exec = require('child_process').exec;
 const Promise = require('bluebird');
-const chalk = require('chalk');
+const chalk = require('../deps/chalkInfo');
 let leju = require('../deps/lejuCore');
 global.path = require('path');
 global.fs = require('fs');
@@ -20,11 +20,11 @@ program
 	.option('-h --help','help doc');
 
 program.command('update').action(() => {
-	exec('npm update leju-cli', (err, stdout, stderr)=> {
+	exec('sudo npm update leju-cli', (err, stdout, stderr)=> {
 		if (!err && stdout) {
-			console.log(chalk.gray('[console info] ')+'update ok')
+			console.log(chalk.info+'update ok')
 		} else {
-			console.log(chalk.red('[console warning] ')+'尼玛，用的最新的升级毛线！')
+			console.log(chalk.warning+'尼玛，用的最新的升级毛线！')
 		}
 	})
 })
@@ -33,7 +33,7 @@ if(!process.argv.slice(2).length){
 	if(_ex){
 		console.log(1)
 	}else{
-		process.stdout.write(chalk.gray('[console info] ')+'please use leju help for more information');
+		process.stdout.write(chalk.info+'please use leju help for more information');
 	}
 }
 function scanner() {
