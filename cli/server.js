@@ -14,7 +14,9 @@ class Server {
 		return () => {
 			if(!ifInit)
 				return false
-			let ls = spawn('sh', [shpath+'/serverStart.sh',serverPath] )
+			let host = process.argv.slice(2)[1]?process.argv.slice(2)[1]:'';
+			let ls = spawn('node', [serverPath,host] )
+			//let ls = spawn('sh', [shpath+'/serverStart.sh',serverPath,host] )
 			ls.stdout.on('data', function(data) {
 				console.log(chalk.info + data);
 			});

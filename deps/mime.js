@@ -1,0 +1,23 @@
+module.exports = {
+'css': 'text/css;charset=UTF-8',
+'gif': 'image/gif;charset=UTF-8',
+'html': 'text/html;charset=UTF-8',
+'htm': 'text/html;charset=UTF-8',
+'ico': 'image/x-icon;charset=UTF-8',
+'jpeg': 'image/jpeg;charset=UTF-8',
+'jpg': 'image/jpeg;charset=UTF-8',
+'js': 'text/javascript;charset=UTF-8',
+'json': 'application/json;charset=UTF-8',
+'pdf': 'application/pdf;charset=UTF-8',
+'png': 'image/png;charset=UTF-8',
+'svg': 'image/svg+xml;charset=UTF-8',
+'swf': 'application/x-shockwave-flash;charset=UTF-8',
+'tiff': 'image/tiff;charset=UTF-8',
+'txt': 'text/plain;charset=UTF-8',
+'wav': 'audio/x-wav;charset=UTF-8',
+'wma': 'audio/x-ms-wma;charset=UTF-8',
+'wmv': 'video/x-ms-wmv;charset=UTF-8',
+'xml': 'text/xml;charset=UTF-8',
+'proto': 'text/plain;charset=UTF-8',
+'manifest':'text/cache-manifest;charset=UTF-8'
+}
