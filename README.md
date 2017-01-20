@@ -111,10 +111,11 @@ leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 ### 1.2.7 version
 
 + add chalk info,warning,error
++ fix server bug and add chalk for server
 
 ### TO DO
 
-+ make chalk as a class
++ fix bug and make out a ftp sever 
 
 ## tips
 
