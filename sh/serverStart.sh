@@ -1,4 +1,5 @@
 #!/bin/zsh
 src=$1;
-sudo node $src 8000;
-exit 0;
+host=$2;
+hosts=${host:-8000};
+sudo node $src $hosts;
