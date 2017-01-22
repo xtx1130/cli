@@ -1,7 +1,7 @@
 {
   "name": "leju-cli",
   "description": "leju cli",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "keywords": [
     "toolkit",
     "cli",
@@ -45,7 +45,6 @@
   "engines": {
     "node": ">= 5.0"
   },
-  "readmeFilename": "README.md",
   "licenses": [
     {
       "type": "MIT"
