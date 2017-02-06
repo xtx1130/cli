@@ -6,7 +6,7 @@ online=$4;
 readonly online;
 readonly offline;
 # 文件处理
-if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]] || [[ $filepath =~ ".png" ]];
+if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]] || [[ $filepath =~ ".png" ]] || [[ $filepath =~ ".jpg" ]];
 then
 	var1=${filepath%%/*};
 	echo '\033[33m['$var1'] update \033[0m';
