@@ -17,10 +17,13 @@ function strToArr()
 	{
 		if [[ ${arr[i]} == "?" ]];
 		then
-			svn add ${arr[i+1]}
+			svn add ${arr[i+1]};
+		elif [[ ${arr[i]} == "!" ]];
+		then
+			echo "\033[31m conflect exsit in svn \033[0m"
+			exit 0;
 		fi
 	}
-	return $arr
 }
 # 文件处理
 if [ $message ] && [[ $filepath =~ ".js" ]] || [[ $filepath =~ ".css" ]] || [[ $filepath =~ ".png" ]] || [[ $filepath =~ ".jpg" ]];
@@ -34,7 +37,7 @@ then
 	cd $online$var1;
 	info=`svn status`;
 	strToArr $info
-	#svn ci -m \'${message}\';
+	svn ci -m \'${message}\';
 	svn log $online$filepath -v -l2;
 	exit 0;
 # 文件夹处理
