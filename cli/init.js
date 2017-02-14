@@ -4,6 +4,7 @@ const createfile = require('../deps/createFile');
 const chalk = require('../deps/chalkInfo');
 const spawn = require('child_process').spawn;
 const shpath = require('../deps/shpath');
+const infoRead = require('../deps/readFile');
 class Init{
 	constructor(){
 		this.option={
@@ -55,7 +56,13 @@ class Init{
 					}
 				})
 			}
-			offline(online,bashsrc);
+			let info = infoRead('info.json');
+			if(info.offlinePath&&info.onlinePath){
+				process.stdout.write(chalk.info+'Path has already exsits!')
+				rl.close()
+			}else{
+				offline(online,bashsrc);
+			}
 		}
 	}
 }
