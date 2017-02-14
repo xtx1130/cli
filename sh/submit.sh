@@ -36,7 +36,7 @@ then
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$var1;
 	info=`svn status`;
-	strToArr $info
+	strToArr $info;
 	svn ci -m \'${message}\';
 	svn log $online$filepath -v -l2;
 	exit 0;
@@ -52,6 +52,8 @@ then
 	echo `sudo tar --exclude '*.svn' -C $offline${folder} -cvf - $tarpath | ( cd $online${folder}; tar -xf -)`;
 	echo '\033[33m['$online$filepath'] update \033[0m' ;
 	cd $online$filepath;
+	info=`svn status`;
+	strToArr $info;
 	svn ci -m \'${message}\'; # > /dev/null
 	svn log $online$filepath -v -l2;
 	exit 0;
