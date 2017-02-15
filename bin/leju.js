@@ -10,6 +10,7 @@ global.path = require('path');
 global.fs = require('fs');
 global.ifInit = require('../deps/ifInit');
 Promise.promisifyAll(global.fs);
+//开放出全局leju变量接口，为接入wp之类的做准备
 Object.defineProperty(global, 'leju', {
     enumerable: true,
     writable: false,
