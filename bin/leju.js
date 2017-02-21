@@ -33,7 +33,7 @@ program.command('update').action(() => {
 if(!process.argv.slice(2).length){
 	let _ex = findFile('lejuconfig.js');
 	if(_ex){
-		console.log('to do')
+		console.log(_ex)
 	}else{
 		process.stdout.write(chalk.info+'please use leju help for more information');
 	}

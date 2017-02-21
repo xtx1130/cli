@@ -2,12 +2,12 @@
 const path = require('path');
 function findFile(filename){
 	let basePath = arguments[1]||process.cwd();
-	let exist = fs.existsSync(filename);
+	let exist = fs.existsSync(basePath+'/'+filename);
 	if(exist)
-		return true
+		return basePath+'/'+filename
 	else{
 		if(arguments[1]!='/')
-			findFile(filename,path.resolve(basePath,'..'))
+			return findFile(filename,path.resolve(basePath,'..'))
 		else
 			return false
 	}
