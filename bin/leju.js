@@ -5,6 +5,7 @@ const program = require('commander');
 const exec = require('child_process').exec;
 const Promise = require('bluebird');
 const chalk = require('../deps/chalkInfo');
+const findFile = require('../deps/findFile');
 let leju = require('../deps/lejuCore');
 global.path = require('path');
 global.fs = require('fs');
@@ -30,9 +31,9 @@ program.command('update').action(() => {
 	})
 })
 if(!process.argv.slice(2).length){
-	var _ex = fs.existsSync(process.cwd()+'/lejuconfig.js');
+	let _ex = findFile('lejuconfig.js');
 	if(_ex){
-		console.log(1)
+		console.log('to do')
 	}else{
 		process.stdout.write(chalk.info+'please use leju help for more information');
 	}
