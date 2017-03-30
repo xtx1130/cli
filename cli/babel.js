@@ -3,6 +3,7 @@ const babel = require('babel-core');
 const path = require('../deps/tpath');
 const wrs = require('../deps/wrstream');
 const chalk = require('../deps/chalkInfo');
+const es2015 = require('babel-preset-es2015');
 class Babels {
 	constructor() {
 		this.option = {
@@ -14,7 +15,7 @@ class Babels {
 		return (ac,option) => {
 			if(!ifInit)
 				return false
-			let opt = {minified:false},
+			let opt = {minified:false,presets:[es2015]},
 				ext = '.es5.js';
 			if(option.mini){
 				opt.minified=true
