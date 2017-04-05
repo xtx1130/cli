@@ -35,14 +35,14 @@ class Uglify{
 					let num1 = yield new Promise((res,rej)=>{
 						let md5sum = crypto.createHash('md5'),
 							stream = fs.createReadStream(file[0]);
-						stream.on('data', function(chunk) {
+						stream.on('data', chunk => {
 					        md5sum.update(chunk);
 					    });
-					    stream.on('end', function() {
+					    stream.on('end', () => {
 					        _str = md5sum.digest('hex').toUpperCase();
 					        res();
 						});
-						stream.on('error', function() {
+						stream.on('error', () => {
 					        rej();
 					    });
 					})
