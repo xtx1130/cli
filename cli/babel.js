@@ -2,8 +2,10 @@
 const babel = require('babel-core');
 const path = require('../deps/tpath');
 const wrs = require('../deps/wrstream');
+const progress = require('progress');
 const chalk = require('../deps/chalkInfo');
 const es2015 = require('babel-preset-es2015');
+
 class Babels {
 	constructor() {
 		this.option = {

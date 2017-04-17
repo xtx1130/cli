@@ -35,6 +35,7 @@
     "commander": ">=2.0.0",
     "crypto": "0.0.3",
     "node-gyp": "^3.4.0",
+    "progress": "^2.0.0",
     "uglify-js": "latest"
   },
   "devDependencies": {
