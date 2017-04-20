@@ -2,6 +2,7 @@
 
 > cli for leju
 
+![quality](http://npm.packagequality.com/badge/leju-cli.png)
 
 ## Deeply individuation env for leju developers
 
