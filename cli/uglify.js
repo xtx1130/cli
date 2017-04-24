@@ -18,7 +18,11 @@ class Uglify{
 		return (ac,opts)=>{
 			if(!ifInit)
 				return false
-			let opt = {mangle:false,beautify:false},
+			let opt = {
+					mangle:{toplevel: true,mangle_props:true},
+					compress:{keep_fnames:false},
+					beautify:{quote_style:1,keep_quoted_props:true}
+				},
 				file=[],
 				result='',
 				args = process.argv.splice(2);
