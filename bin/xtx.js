@@ -43,7 +43,7 @@ if(!process.argv.slice(2).length){
 let scanner = () => {
 	let readlist = fs.readdirSync(__dirname + '/../cli'),
 		_str = [];
-	readlist.forEach(function(s){
+	readlist.forEach(s=>{
 		if(s.match('.js'))
 			_str.push(s)
 	})

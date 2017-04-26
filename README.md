@@ -1,12 +1,12 @@
-# leju-cli 
+# xtx-cli 
 
-> cli for leju
+> cli for local
 
 ![quality](http://npm.packagequality.com/badge/leju-cli.png)
 
-## Deeply individuation env for leju developers
+## Deeply individuation env for local environment
 
-### What is leju?
+### What is cli?
 
 Establish folders quickly  
 Use plugins quickly  
@@ -24,48 +24,48 @@ npm install -g leju-cli
 ### parameter
 
 ```bash
-leju -h --help 
+xtx -h --help 
 ```
 
 ```bash
-leju init(init project)
+xtx init(init project)
 ```
 
 ```bash
-leju version
+xtx version
 ```
 
 ```bash
-leju folder
+xtx folder
 ```
 
 ```bash
-leju update
+xtx update
 ```
 
 ```bash
-leju babel (-m)
+xtx babel (-m)
 ```
 
 ```bash
-leju cdn (-l --local,-o --online,-t --test)
+xtx cdn (-l --local,-o --online,-t --test)
 ```
 
 ```bash
-leju common (browserify)
+xtx common (browserify)
 ```
 
 ```bash
-leju ci (svn up and ci)
+xtx ci (svn up and ci)
 ```
 
 ```bash
-leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
+xtx hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 ```
 
 ### 1.1.0 version
 
-+ add programmer method and you can find demo.js for your fast establish a leju command
++ add programmer method and you can find demo.js for your fast establish a command
 
 ### 1.1.3 version
 

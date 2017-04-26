@@ -23,8 +23,8 @@ class Babels {
 				opt.minified=true
 				ext = '.es5min.js'
 			}
-			var args = process.argv.splice(2);
-			babel.transformFile(args[1],opt,function(err, result) {
+			let args = process.argv.splice(2);
+			babel.transformFile(args[1],opt,(err, result) => {
 				let code = result.code;
 				let pa = new path(args[1]);
 				pa.name = pa.name.join('.') + ext;

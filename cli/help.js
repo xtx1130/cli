@@ -1,9 +1,9 @@
-var f = function() {
+let f = function() {
     this.description = 'help commend'
-    this.action = function() {
-        return function() {
+    this.action = ()=> {
+        return ()=> {
             process.stdout.write('\n' + [
-                'Usage: leju [Command] [Options]',
+                'Usage: xtx [Command] [Options]',
                 '',
                 'Command:',
                 '',
