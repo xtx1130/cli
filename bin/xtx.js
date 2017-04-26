@@ -19,7 +19,7 @@ Object.defineProperty(global, 'xtx', {
     value: leju
 });
 program
-	.version('1.2.5')
+	.version('2.0.0')
 	.option('-h --help','help doc');
 
 program.command('update').action(() => {
