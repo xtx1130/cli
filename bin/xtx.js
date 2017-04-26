@@ -12,8 +12,8 @@ global.path = require('path');
 global.fs = require('fs');
 global.ifInit = require('../deps/ifInit');
 Promise.promisifyAll(global.fs);
-//开放出全局leju变量接口，为接入wp之类的做准备 
-Object.defineProperty(global, 'leju', {
+//开放出全局xtx变量接口，为接入wp之类的做准备 
+Object.defineProperty(global, 'xtx', {
     enumerable: true,
     writable: false,
     value: leju
@@ -32,16 +32,16 @@ program.command('update').action(() => {
 	})
 })
 if(!process.argv.slice(2).length){
-	let _file = findFile('lejuconfig.js'),
+	let _file = findFile('xtxconfig.js'),
 		_fileConfig = require(_file);
 	if(_file){
 		console.log(_fileConfig)
 	}else{
-		process.stdout.write(chalk.info+'please use leju help for more information');
+		process.stdout.write(chalk.info+'please use xtx help for more information');
 	}
 }
-function scanner() {
-	var readlist = fs.readdirSync(__dirname + '/../cli'),
+let scanner = () => {
+	let readlist = fs.readdirSync(__dirname + '/../cli'),
 		_str = [];
 	readlist.forEach(function(s){
 		if(s.match('.js'))
@@ -49,22 +49,22 @@ function scanner() {
 	})
 	return _str;
 }
-var comm = scanner()
-for (var i = 0; i < comm.length; i++) {
-	var str = comm[i].split('.')[0];
-	var tag = require(__dirname + '/../cli/' + comm[i])._export;
-	var prog = program.command(str);
+let comm = scanner()
+for (let i = 0; i < comm.length; i++) {
+	let str = comm[i].split('.')[0];
+	let tag = require(__dirname + '/../cli/' + comm[i])._export;
+	let prog = program.command(str);
 	if (typeof tag == 'function') {
 		tag = new tag()
 		if (tag.option) {
-			for (var j in tag.option) {
+			for (let j in tag.option) {
 				prog.option(j, tag.option[j])
 			}
 		}
 		prog.action(tag.action.call(prog))
 	} else {
 		if (tag.option) {
-			for (var j in tag.option) {
+			for (let j in tag.option) {
 				prog.option(j, tag.option[j])
 			}
 		}

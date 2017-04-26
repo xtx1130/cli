@@ -1,11 +1,11 @@
 {
   "name": "leju-cli",
-  "description": "leju cli",
-  "version": "1.3.0",
+  "description": "xtx cli",
+  "version": "2.0.0",
   "keywords": [
     "toolkit",
     "cli",
-    "leju"
+    "xtx"
   ],
   "files": [
     "lib",
@@ -20,7 +20,7 @@
     ".babelrc"
   ],
   "bin": {
-    "leju": "./bin/leju.js"
+    "xtx": "./bin/xtx.js"
   },
   "repository": {
     "type": "git",

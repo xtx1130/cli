@@ -114,6 +114,10 @@ leju hosts domain (-a --add add \# for domain,-d --delete delete \# for domain)
 + add chalk info,warning,error
 + fix server bug and add chalk for server
 
+### 2.0.0 version
+
++ Good Bye sina leju , welcome xtx1130
+
 ### TO DO
 
 + fix bug and make out a ftp sever 

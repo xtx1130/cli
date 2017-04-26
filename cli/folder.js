@@ -1,6 +1,6 @@
 /**
- *@description 生成乐居FE开发环境相关目录结构
- *@author tianxin@leju.com
+ *@description 生成开发环境相关目录结构
+ *@author xtx1130@gmail.com
 */
 const fileFolder = require('../config/config.js');
 const filedeps = require('../deps/filedeps');
