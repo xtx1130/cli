@@ -2,7 +2,6 @@
 
 > cli for local
 
-![quality](http://npm.packagequality.com/badge/leju-cli.png)
 
 ## Deeply individuation env for local environment
 
@@ -18,7 +17,7 @@ change hosts quickly
 _node(>=5.0.0),zsh bash,nginx_
 
 ```bash
-npm install -g leju-cli
+npm install -g xtx-cli
 ```
 
 ### parameter
