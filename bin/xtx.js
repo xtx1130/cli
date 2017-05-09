@@ -18,12 +18,13 @@ Object.defineProperty(global, 'xtx', {
     writable: false,
     value: leju
 });
+console.dir(new xtx())
 program
 	.version('2.0.0')
 	.option('-h --help','help doc');
 
 program.command('update').action(() => {
-	exec('sudo npm update leju-cli', (err, stdout, stderr)=> {
+	exec('sudo npm update xtx-cli', (err, stdout, stderr)=> {
 		if (!err && stdout) {
 			console.log(chalk.info+'update ok')
 		} else {
