@@ -3,10 +3,13 @@ const uglify = require('uglify-js2');
 const browser = require('browserify');
 class Base{
 	constructor(){
-		console.log(fUglify,fbr)
+		this.data = void 0;
 	}
-	pack(){
+	uglify(){
 
+	}
+	common(){
+		
 	}
 }
 module.exports = Base;
