@@ -1,9 +1,9 @@
 'use strict';
-const uglify = require('../cli/uglify');
-const br = require('browserify');
+const uglify = require('uglify-js2');
+const browser = require('browserify');
 class Base{
-	constructor(objs={uglify:{},common:{}}){
-		console.log(objs)
+	constructor(){
+		console.log(fUglify,fbr)
 	}
 	pack(){
 
