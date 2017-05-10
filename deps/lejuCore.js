@@ -52,11 +52,20 @@ class Base extends emit{
 		return this;
 	}
 	common(){
-		if(this.data.code){
-
-		}else if(!this.data.code){
-			
+		if(this.file){
+			let result = browser(this.file)
+			result.bundle((err,buf)=>{
+				if(err)
+					console.log(err)
+				else {
+					this.data.code = buf;
+					console.log(this.data.code)
+				}
+			});
+		}else{
+			throw new Error('妈蛋，browserify只能传file路径不能传file内容，怪我咯');
 		}
+		return this;
 	}
 }
 module.exports = Base;
