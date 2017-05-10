@@ -18,7 +18,10 @@ Object.defineProperty(global, 'xtx', {
     writable: false,
     value: leju
 });
-console.dir(new xtx())
+let xt = new xtx();
+xt.file = './test/message_r.js';
+console.dir(xt.uglify({sourceMap:true}))
+return ;
 program
 	.version('2.0.0')
 	.option('-h --help','help doc');
