@@ -35,7 +35,6 @@ class Base extends emit{
 			};
 			this.methodPath.push('uglify');
 			this._emitUglify()
-			console.log(this)
 		};
 		if(!this.data.code){
 			let genera = async ()=>{
@@ -53,7 +52,11 @@ class Base extends emit{
 		return this;
 	}
 	common(){
+		if(this.data.code){
 
+		}else if(!this.data.code){
+			
+		}
 	}
 }
 module.exports = Base;
