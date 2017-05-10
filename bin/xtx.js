@@ -20,7 +20,7 @@ Object.defineProperty(global, 'xtx', {
 });
 let xt = new xtx();
 xt.file = './test/message_r.js';
-console.dir(xt.uglify({sourceMap:true}))
+console.log(xt.uglify({sourceMap:true}))
 return ;
 program
 	.version('2.0.0')
