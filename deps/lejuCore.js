@@ -26,14 +26,16 @@ class Base extends emit{
 				opt.outSourceMap = fileName +'.out.js.map';
 			if(!opts.md5)
 				opt.outFileName = fileName+'.out.js';
-			let result = uglify.minify(this.data.code,opt);
+			let result = uglify.minify(this.data.code.toString(),opt);
 			this.data = {
-				code:result.code,
+				code:new Buffer(result.code),
 				map:result.map,
 				codeFile:opt.outFileName,
 				mapFile:opt.outSourceMap
 			};
 			this.methodPath.push('uglify');
+			console.log(this.data.code)
+			console.timeEnd('test')
 			this._emitUglify()
 		};
 		if(!this.data.code){
@@ -59,7 +61,6 @@ class Base extends emit{
 					console.log(err)
 				else {
 					this.data.code = buf;
-					console.log(this.data.code)
 				}
 			});
 		}else{
