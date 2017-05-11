@@ -11,7 +11,7 @@ let PromRead = Promise.method(
 					bufferData.push(data);
 				})
 				files.on('end', () => {
-					resolve(bufferData.join('').toString());
+					resolve(Buffer.concat(bufferData));
 				})
 				files.on('error',err => {
 					reject(err)
