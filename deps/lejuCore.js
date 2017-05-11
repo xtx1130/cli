@@ -2,6 +2,7 @@
 const uglify = require('uglify-js2');
 const browser = require('browserify');
 const readFile = require('../deps/promiseReadfile');
+const writeFile = require('../deps/promiseReadfile');
 const Promise = require('bluebird');
 const emit = require('events').EventEmitter;
 class Base extends emit{
@@ -18,6 +19,7 @@ class Base extends emit{
 		this.emit('commonFinish')
 	}
 	uglify(opts={}){//opts.sourceMap='path'
+		this.methodPath.push('uglify');
 		let opt = {fromString:true};
 		let fileName = this.file.split('/').pop().split('.')[0];
 		let uglifyFunc = res => {
@@ -33,8 +35,8 @@ class Base extends emit{
 				codeFile:opt.outFileName,
 				mapFile:opt.outSourceMap
 			};
-			this.methodPath.push('uglify');
 			console.log(this.data.code)
+			console.log(2)
 			console.timeEnd('test')
 			this._emitUglify()
 		};
@@ -54,6 +56,7 @@ class Base extends emit{
 		return this;
 	}
 	common(){
+		this.methodPath.push('common');
 		if(this.file){
 			let result = browser(this.file)
 			result.bundle((err,buf)=>{
@@ -61,11 +64,24 @@ class Base extends emit{
 					console.log(err)
 				else {
 					this.data.code = buf;
+					this._emitCommon()
 				}
 			});
+			console.log(1)
 		}else{
 			throw new Error('妈蛋，browserify只能传file路径不能传file内容，怪我咯');
 		}
+		return this;
+	}
+	out(path){
+		path = path||this.data.codeFile;
+		console.log(this.methodPath)
+		writeFile(path,this.data.code).then(()=>{
+			console.log(3)
+			console.log(`$path has been writed`)
+		},(err)=>{
+			throw err;
+		})
 		return this;
 	}
 }
