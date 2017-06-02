@@ -18,12 +18,12 @@ Object.defineProperty(global, 'xtx', {
     writable: false,
     value: leju
 });
-let xt = new xtx();
-xt.file = './test/message_r.js';
-console.time('test')
-console.log(xt.common().uglify({sourceMap:true}).out())//
+//let xt = new xtx();
+//xt.file = './test/message_r.js';
+//console.time('test')
+//console.log(xt.common().uglify({sourceMap:true}).out())//
 
-return ;
+//return ;
 program
 	.version('2.0.0')
 	.option('-h --help','help doc');
